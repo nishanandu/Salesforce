@@ -1,0 +1,7 @@
+WinActivate("Login | Salesforce - Google Chrome","Chrome Legacy Window")
+Sleep(2000)
+Send("cube84user{@}gwp.com.c84dev{TAB}")
+Sleep(2000)
+Send("March{@}123")
+Sleep(1000)
+Send("{ENTER}")

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><config>
+	    <ProjectName>GWP</ProjectName>
+        <AUTPath>https://greaterwashingtonpartnership--c84dev.sandbox.lightning.force.com/lightning/page/home</AUTPath>
+		<LocalBrowserName>Chrome</LocalBrowserName>
+		<CaptureScreenShot>Failed</CaptureScreenShot>
+		<RunReference>SF_Demo1</RunReference>
+		<RunReferenceFlag>Yes</RunReferenceFlag>
+		<ReportsDBJDBCDriver>com.mysql.jdbc.Driver</ReportsDBJDBCDriver>
+		<ReportsDBURL>jdbc:mysql://localhost:3306/</ReportsDBURL>
+		<ReportsDBName>salesforcecatdemo</ReportsDBName>
+		<ReportsDBUserName>root</ReportsDBUserName>
+		<ReportsDBPassword>Ch@ngep0nd@123</ReportsDBPassword>
+    </config>

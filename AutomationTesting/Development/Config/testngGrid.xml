@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" verbose="1" thread-count="3">
+	<test name="Node1">
+	    <parameter name="browser" value="Chrome"/>
+	    <parameter name="NodeURL" value="172.17.2.19356:5551"/>
+	    <parameter name="NodeName" value="Node1"/>
+	    <parameter name = "RegPackName" value="GM-Company Master,GM-State Master"/>
+	    <classes>
+            <class name="Node1.DriverScript"/>
+        </classes>
+    </test>
+	<test name="Node2">
+	    <parameter name="browser" value="Chrome"/>
+	    <parameter name="NodeURL" value="172.17.2.193:5552"/>
+	    <parameter name="NodeName" value="Node2"/>
+	    <parameter name = "RegPackName" value="GM-Company Master,GM-Location Master"/>
+	    <classes>
+            <class name="Node2.DriverScript"/>
+        </classes>
+    </test>
+    <test name="Node3">
+	    <parameter name="browser" value="Chrome"/>
+	    <parameter name="NodeURL" value="172.17.0.96:5553"/>
+	    <parameter name="NodeName" value="Node3"/>
+	    <parameter name = "RegPackName" value="GM-Company Master,GM-Location Master"/>
+	    <classes>
+            <class name="Node3.DriverScript"/>
+        </classes>
+    </test>
+	</suite> <!-- Suite -->
+

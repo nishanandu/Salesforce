@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>CAT</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+	<!-- Lato Font -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+	<!--Font Awesome -->
+	<link rel="stylesheet" href="font/css/font-awesome.min.css">
+
+	<!-- Bootstrap -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- StyleSheet -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/data_table_style.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Data Table -->
+<link rel="stylesheet" type="text/css" href="css/fixedHeader.css">
+<link rel="stylesheet" type="text/css" href="css/select.css">
+<link rel="stylesheet" type="text/css" href="css/scrollbar.css">
+
+    
+    
+</head>
+<body>
+<!-- Header Nav Bar -->
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header"><a class="navbar-brand" href="main.html"><img src="images/OSF_logo.jpg" alt="CAT" class="pull-left logo1"><img src="images/logo.png" alt="CAT" class="pull-left logo2"></a> 
+      <!--custom menu-->
+      <ul class="header-menu">
+        <li><a href="main.html" title="Home"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        <li><a href="report.html" title="Reports"><i class="fa fa-pie-chart" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<b></b></a></li>
+      </ul>
+      <!--custom menu end--> 
+    </div>
+  </div>
+</nav>
+<!-- Header Nav Bar End -->
+
+<!-- Status Bar -->
+<div class="option_bar">
+  <div class="container-fluid">
+    <ol class="breadcrumb">
+      <li class="active">Changepond Accelerated Test (CAT) - Automated Test Suite</li>
+    </ol>
+  </div>
+</div>
+<!-- Status Bar End -->
+
+<!-- Body Content -->
+<div class="container">
+  <!-- <div class="row"> -->
+    <!-- <div class="col-md-4 col-sm-12 "> -->
+      <!-- <div class="row"> -->
+        <!-- <div class="col-md-6 col-sm-6 col-xs-6"> -->
+          <!-- <div class="panel panel-default"> -->
+            <!-- <div class="panel-body"> -->
+              <!-- <p class="title passed">Passed</p> -->
+              <!-- <h1 class="count"id="passedTest"></h1> -->
+              <!-- <p class="sub_title">Tests</p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="col-md-6 col-sm-6 col-xs-6"> -->
+          <!-- <div class="panel panel-default"> -->
+            <!-- <div class="panel-body"> -->
+              <!-- <p class="title failed">Failed</p> -->
+              <!-- <h1 class="count"id="faliedTest"></h1> -->
+              <!-- <p class="sub_title">Tests</p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+      <!-- <div class="row"> -->
+        <!-- <div class="col-md-6 col-sm-6 col-xs-6"> -->
+          <!-- <div class="panel panel-default"> -->
+            <!-- <div class="panel-body"> -->
+              <!-- <p class="title normal_view no_run" >No Run</p> -->
+              <!-- <p class="title res_view">Licensed Items</p> -->
+              <!-- <h1 class="count" id="noRunTest"></h1> -->
+              <!-- <p class="sub_title">Tests</p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+        <!-- <div class="col-md-4"> -->
+      <!-- <div class="panel panel-default"> -->
+        <!-- <div class="panel-body"> -->
+          <!-- <p class="title">Total TestCase Execution Report</p> -->
+          <!-- <div id="container1" style="width: 100%; height: 100%; margin: 8px auto"></div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+    <!-- <div class="col-md-4"> -->
+      <!-- <div class="panel panel-default"> -->
+        <!-- <div class="panel-body"> -->
+          <!-- <p class="title">Total TestCase Execution Report</p> -->
+          <!-- <div id="container3" style="width: 100%; height: 100%; margin: 15px auto 0"></div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+  <div class="row">
+      <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body plr0">
+            <span>Current Run Summary</span>
+                <table id="table1"  class="display dataTable item_table" width="70%" ></table>
+				
+            </div>
+          </div>
+    </div>
+      <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body plr0">
+            <span>Regression Pack Summary</span>
+                <table id="table2"  class="display dataTable item_table" width="70%" ></table>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+<footer>
+<div class="container">
+<div class="text-center">
+Copyright &copy; 2017 CHANGEPOND TECHNOLOGIES
+</div>
+</div>
+</footer>
+<!-- Body Content End --> 
+
+<div class="modal" id="myModal">
+	<div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Regression Pack Statistics</h4>
+        </div><div class="container"></div>
+        <div class="modal-body">
+<div class="container" style="width:100%">
+  <!-- <div class="row"> -->
+    <!-- <div class="col-md-4 col-sm-12 "> -->
+      <!-- <div class="row"> -->
+        <!-- <div class="col-md-6 col-sm-6 col-xs-6"> -->
+          <!-- <div class="panel panel-default"> -->
+            <!-- <div class="panel-body"> -->
+              <!-- <p class="title passed">Passed</p> -->
+              <!-- <h1 class="count" id = "modelpassedcount"></h1> -->
+              <!-- <p class="sub_title">Tests</p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="col-md-6 col-sm-6 col-xs-6"> -->
+          <!-- <div class="panel panel-default"> -->
+            <!-- <div class="panel-body"> -->
+              <!-- <p class="title failed">Failed</p> -->
+              <!-- <h1 class="count" id = "modelfailedcount"></h1> -->
+              <!-- <p class="sub_title">Tests</p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+      <!-- <div class="row"> -->
+        <!-- <div class="col-md-6 col-sm-6 col-xs-6"> -->
+          <!-- <div class="panel panel-default"> -->
+            <!-- <div class="panel-body"> -->
+              <!-- <p class="title normal_view no_run">No Run</p> -->
+              <!-- <h1 class="count" id = "modelnoruncount"></h1> -->
+              <!-- <p class="sub_title">Tests</p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+        <!-- <div class="col-md-4"> -->
+      <!-- <div class="panel panel-default"> -->
+        <!-- <div class="panel-body"> -->
+          <!-- <p class="title">RegPack002 TestCase Execution Report</p> -->
+          <!-- <div id="container4" style=" height: 100%; margin: 8px auto"></div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+    <!-- <div class="col-md-4"> -->
+      <!-- <div class="panel panel-default"> -->
+        <!-- <div class="panel-body"> -->
+          <!-- <p class="title">RegPack002 TestCase Execution Report</p> -->
+          <!-- <div id="container5" style="width: 100%; height: 100%; margin: 15px auto 0"></div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+  <div class="row">
+      <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body plr0">
+            <span>Overall Summary</span>
+                <table id="table3"  class="display dataTable item_table" width="70%" ></table>
+            </div>
+          </div>
+    </div>
+      <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body plr0">
+            <span>Test Case Summary</span>
+                <table id="table4"  class="display dataTable item_table" width="70%" ></table>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="modal" id="myModal2" data-backdrop="static">
+	<div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title"><span></span></h4>
+        </div><div class="container"></div>
+        <div class="modal-body">
+  <!-- <div class="row"> -->
+        <!-- <div class="col-md-2 "> -->
+          <!-- <div class="panel panel-default"> -->
+            <!-- <div class="panel-body"> -->
+              <!-- <p class="title passed">Passed</p> -->
+              <!-- <h1 class="count" -->
+			  <!-- >1</h1> -->
+              <!-- <p class="sub_title">TestSteps</p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="col-md-2 "> -->
+          <!-- <div class="panel panel-default"> -->
+            <!-- <div class="panel-body"> -->
+              <!-- <p class="title failed">Failed</p> -->
+              <!-- <h1 class="count">2</h1> -->
+              <!-- <p class="sub_title">TestSteps</p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="col-md-2 "> -->
+          <!-- <div class="panel panel-default"> -->
+            <!-- <div class="panel-body"> -->
+              <!-- <p class="title normal_view no_run">No Run</p> -->
+              <!-- <h1 class="count">4</h1> -->
+              <!-- <p class="sub_title">TestSteps</p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+  <!-- </div> -->
+  <div class="row">
+      <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body plr0">
+            <span>Test Steps</span>
+                <table id="table5"  class="display dataTable item_table" width="70%" ></table>
+            </div>
+          </div>
+    </div>
+  </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.1.min.js"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="bootstrap/js/bootstrap.min.js"></script> 
+
+<!-- <!-- chart js --> 
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-3d.js"></script> 
+
+<script src="js/chart.js"></script>
+<!-- <!-- script --> 
+<script src="js/overallchartreports.js"></script> 
+<script src="js/regressionpacksummary.js"></script> 
+
+
+
+<!-- custom js --> 
+<script src="js/custom.js"></script> 
+
+
+<!-- dataTable js -->
+<script type="text/javascript" src="js/jquery.dataTables.js"></script>
+<script src="js/data_table_number_sorting.js"></script> 
+
+<script>
+
+function heightCal() {
+var chartHeight=$(".panel").first().height();
+$(".panel-body #container1").css("height",(chartHeight * 2) - 63);
+$(".panel-body #container3").css("height",(chartHeight * 2) - 63);
+$(".panel-body #container4").css("height",(chartHeight * 2) - 63);
+$(".panel-body #container5").css("height",(chartHeight * 2) - 63);
+}
+
+heightCal();
+//====== table1 Setup =======//
+
+	var dataSet_table1 = [
+		[ OverallTestCases,totalTestCaseExecuted,barChartValuePassed,barChartValueFailed,RunTime ],
+	];	
+	$(document).ready(function() {
+		$('#table1').DataTable( {
+			data: dataSet_table1,
+			columns: [
+				{ title: "No. of Test Cases" },
+				{ title: "Executed" },
+				{ title: "Passed" },
+				{ title: "Failed" },
+				{ title: "Execution Duration" }
+			],
+			fixedHeader: false,
+			"scrollY":"400px",
+			"scrollCollapse": true,
+			"paging":         true,
+			responsive: false,
+			bSort: false,
+			paging:   false,
+			info:false,
+			ordering: false,
+			searching:false,
+			 columnDefs: [
+       { type: 'natural', targets: 0 }
+     ]
+		});				
+	});
+	
+	
+//====  Table2 Setup  =====//
+
+	//var dataSet_table2 = [
+		//[ "RegPack002","1","1","0"," " ],
+	//];
+	
+	$(document).ready(function() {
+		$('#table2').DataTable( {
+			data: dataSet_table2,
+			columns: [
+				{ title: "Regression Pack Name",
+
+					render : function(data, type, row, meta){
+						if(type === 'display'){
+							return $('<a>')
+							.attr('href', '#myModal')
+							.attr('data-toggle', 'modal')
+							.attr('data-toggle', 'modal')
+							.text(data)
+							.wrap('<div></div>')
+							.parent()
+							.html();
+						}
+						 else {
+							return data;
+						}
+					}
+
+				 },
+				 { title: "No. of Test Cases" },
+				{ title: "Executed" },
+				{ title: "Passed" },
+				{ title: "Failed" },
+				{ title: "Failed Test Cases ID" }
+			],
+			fixedHeader: false,
+			"scrollY":"400px",
+			"scrollCollapse": true,
+			"paging":         true,
+			responsive: false,
+			 columnDefs: [
+       { type: 'natural', targets: 0 }
+     ]
+		});
+	});
+
+	//============================ 1st modal setup ========================================//	
+var count = 1;
+var fileNamevalue;
+var fileTestCaseName;
+var dataSet_table3=[];
+var dataSet_table4 =[];
+var dataSet_table5=[];
+var table_temp;
+var modelchartpassed;
+var modelchartfailed;
+var modelchartnorun;
+var table;
+
+function loadTable3(){
+	table = $('#table3').DataTable( {
+		data: dataSet_table3,
+		columns: [
+			{ title: "Regression Pack Name" },
+			{ title: "No. of Test Cases" },
+			{ title: "Executed" },
+			{ title: "Passed" },
+			{ title: "Failed" },
+			{ title: "Execution Duration" },
+		],
+		fixedHeader: false,
+		"scrollY":"400px",
+		"scrollCollapse": true,
+		"paging":         true,
+		responsive: false,
+		bSort: false,
+		paging:   false,
+		info:false,
+		ordering: false,
+		searching:false	,
+ columnDefs: [
+       { type: 'natural', targets: 0 }
+     ]	
+	});
+}
+
+function loadTable4(){
+	//====  Table4 Setup  =====//
+
+	//var dataSet_table4 = [
+		//[ "P2_OSF_Agreements_TC001","Valdiate whether a new Consent Wizard agreement can be created from agreement page in OSF.","PASS","21"],
+		//[ "P2_OSF_Agreements_TC002","Validate whether a new consultancy agreement record can be created and actiate as legal owner in OSF.","NO RUN","NA"],
+		//[ "P2_OSF_Agreements_TC003","Validate whether Payment record can be created and submit for an Active consultancy agreement of legal owner.","NO RUN","NA"],
+		//[ "P2_OSF_Agreements_TC004","Validate whether a new consultancy agreement record can be created and activate as Business owner.","NO RUN","NA"],
+		//[ "P2_OSF_Agreements_TC005","Validate whether Payment record can be created and submit for an Active consultancy wizard agreement of Business owner.","NO RUN","NA"],
+	//];
+	
+	
+	$('#table4').DataTable( {
+		data: dataSet_table4,
+		columns: [
+			{ title: "Test Case ID",
+
+				render : function(data, type, row, meta){
+					if(type === 'display'){
+						return $('<a>')
+						.attr('href', '#myModal2')
+						.attr('data-toggle', 'modal')
+						//.attr('onclick', 'function(){ fileNamevalue=$(this).html(); if (count == 1) { count = count + 1; setTimeout(function(){ tableClick(fileNamevalue); clickChart(); }, 10); } };')
+						.text(data)
+						.wrap('<div></div>')
+						.parent()
+						.html();
+					}
+					 else {
+						return data;
+					}
+				}
+
+			 },
+			{ title: "Description" },
+			{ title: "Status",
+			
+			
+				render : function(data, type, row, meta){
+					if(type === 'display'){
+						if(data ==='Passed')
+						{
+							return $('<div>')
+							.addClass('pass_bg')
+							.text(data)
+							.wrap('<div></div>')
+							.parent()
+							.html();
+						}
+						else
+						{
+						
+						 if (data=='Failed')
+							{
+							return $('<div>')
+							.addClass('fail_bg')
+							.text(data)
+							.wrap('<div></div>')
+							.parent()
+							.html();
+							}
+							else
+							{
+							return $('<div>')
+							.addClass('no_run_bg')
+							.text(data)
+							.wrap('<div></div>')
+							.parent()
+							.html();
+							}
+						}
+				}
+				else {
+				return data;
+				}
+			 }
+			},
+			{ title: "Execution Duration" }
+		],
+		fixedHeader: false,
+		"scrollY":"400px",
+		"scrollCollapse": true,
+		"paging":         true,
+		responsive: true,
+ columnDefs: [
+       { type: 'natural', targets: 0 }
+     ]
+	});
+	
+	$("#table4 tr td a").off('click').on('click',function(){			
+		
+		fileTestCaseName=$(this).html();
+		setTimeout(function(){ tableClickInside();  }, 10);
+	});
+}
+
+function tableClick() {		
+	var ilength = dataSet_table2.length;
+	var table4_temp=[];
+	//var table5_temp[];
+	for(var i = 0; i<ilength; i++)
+	{  
+	   table_temp = dataSet_table2[i][6];
+       table4_temp = dataSet_table2[i][7];  
+	   if(table_temp != null && table_temp[0] == fileNamevalue){
+			dataSet_table3=[table_temp]
+			dataSet_table4=table4_temp
+			//table5_temp=dataSet_table4[i][5];
+			//dataSet_table5=table5_temp
+			modelchartpassed=parseInt(table_temp[2]);
+			modelchartfailed=parseInt(table_temp[3]);
+			modelchartnorun=parseInt(table_temp[4]);
+	   }
+    }
+	if($.fn.dataTable.isDataTable( '#table3' )){
+		$('#table3').dataTable().fnDestroy();
+	}
+	if($.fn.dataTable.isDataTable( '#table4' )){
+		$('#table4').dataTable().fnDestroy();
+	}
+	
+	
+	loadTable3();
+	loadTable4();
+	
+}
+
+
+
+//================================ 2nd modal setup ===========================================//
+function tableClickInside() {
+	//====  Table5 Setup  =====//
+
+	var ilength = dataSet_table2.length;
+	var table3_temp;
+	var table4_temp;
+	var table5_temp=[];
+	//var table5_temp[];
+	for(var i = 0; i<ilength; i++)
+	{  
+	   table3_temp = dataSet_table2[i][6];       
+	   if(table3_temp != null && table3_temp[0] == fileNamevalue){
+			table4_temp = dataSet_table2[i][7];  
+			for(var i = 0; i<table4_temp.length; i++){
+				if(table4_temp[i] != null && table4_temp[i][0] == fileTestCaseName){
+					table5_temp=table4_temp[i][4];
+					dataSet_table5=table5_temp;
+				}			
+			}
+	   }
+    }
+	if($.fn.dataTable.isDataTable( '#table5' )){
+		$('#table5').dataTable().fnDestroy();
+	}
+	
+	<!-- var dataSet_table5 = [ -->
+		<!-- [ "STEP1","Open browser","Chrome","Browser opened successfully","Browser Opened Successfully","PASS",""], -->
+		<!-- [ "STEP2","Launch the application","NA","	Application has been launched","Application has been launched","PASS",""], -->
+		<!-- [ "STEP3","Enter username in text field", "manickavasagam.sivaprakasam@opensocietyfoundations.org.","Entered text field value successfully","Browser Opened Successfully","PASS",""], -->
+		<!-- [ "STEP4","Enter password in text field 'password'.","lordshiva@123","Entered text field value successfully","Entered text field value successfully","PASS",""], -->
+		<!-- [ "STEP5","Close the browser","Chrome","NA","Browser closed successfully","PASS",""], -->
+	<!-- ]; -->
+	
+	
+		$('#table5').DataTable( {
+			data: dataSet_table5,
+			columns: [
+				{ title: "Test Step " },
+				{ title: "Description " },
+				{ title: "Test Data  " },
+				{ title: "Expected Result " },
+				{ title: "Actual Result " },
+				{ title: "Status",
+					render : function(data, type, row, meta){
+						if(type === 'display'){
+							if(data ==='Passed')
+							{
+								return $('<div>')
+								.addClass('pass_bg')
+								.text(data)
+								.wrap('<div></div>')
+								.parent()
+								.html();
+							}
+							else
+							{
+							
+							 if (data=='Failed')
+								{
+								return $('<div>')
+								.addClass('fail_bg')
+								.text(data)
+								.wrap('<div></div>')
+								.parent()
+								.html();
+								}
+								else
+								{
+								return $('<div>')
+								.addClass('no_run_bg')
+								.text(data)
+								.wrap('<div></div>')
+								.parent()
+								.html();
+								}
+							}
+					}
+					else {
+					return data;
+					}
+				 }
+				},
+				{ title: "Screenshot",
+				render : function(data, type, row, meta){
+				var temp1 = data;
+				console.log(row+":"+temp1);
+						if(type == 'display'){
+							<!-- return $('<a href="'+data+'" target="_blank"><img src="'+data+'" width=60px height=35px alt="no screen shot"/></a>').wrap('<div></div>').parent().html(); -->
+							// //.addClass('fa fa-camera-retro screen-shot') //.html('')
+							
+							return $('<a>')
+							.attr('href', data)
+							.attr('target', '_blank')
+							.addClass('fa fa-camera-retro screen-shot')
+							.wrap('<div></div>')
+							.parent()
+							.html();
+							
+						}
+						 else {
+							return data;
+						}
+					}
+				
+				
+				
+				
+				
+				
+				
+				 }
+			],
+			fixedHeader: false,
+			"scrollY":        "400px",
+        "scrollCollapse": true,
+        "paging":         true,
+		 responsive: true,
+		
+		 columnDefs: [
+       { type: 'natural', targets: 0 }
+     ]
+		});
+}
+
+	
+	
+<!-- function tableClickInside() { -->
+	<!-- //====  Table5 Setup  =====// -->
+
+	<!-- var dataSet_table5 = [ -->
+		<!-- [ "STEP1","Open browser","Chrome","Browser opened successfully","Browser Opened Successfully","PASS",""], -->
+		<!-- [ "STEP2","Launch the application","NA","	Application has been launched","Application has been launched","PASS",""], -->
+		<!-- [ "STEP3","Enter username in text field", "manickavasagam.sivaprakasam@opensocietyfoundations.org.","Entered text field value successfully","Browser Opened Successfully","PASS",""], -->
+		<!-- [ "STEP4","Enter password in text field 'password'.","lordshiva@123","Entered text field value successfully","Entered text field value successfully","PASS",""], -->
+		<!-- [ "STEP5","Close the browser","Chrome","NA","Browser closed successfully","PASS",""], -->
+	<!-- ]; -->
+	
+<!-- //	$(document).ready(function() { -->
+		<!-- $('#table5').DataTable( { -->
+			<!-- data: dataSet_table5, -->
+			<!-- columns: [ -->
+				<!-- { title: "Test Step " }, -->
+				<!-- { title: "Description " }, -->
+				<!-- { title: "Test Data  " }, -->
+				<!-- { title: "Expected Result " }, -->
+				<!-- { title: "Actual Result " }, -->
+				<!-- { title: "Status", -->
+					<!-- render : function(data, type, row, meta){ -->
+						<!-- if(type === 'display'){ -->
+							<!-- if(data ==='PASS') -->
+							<!-- { -->
+								<!-- return $('<div>') -->
+								<!-- .addClass('pass_bg') -->
+								<!-- .text(data) -->
+								<!-- .wrap('<div></div>') -->
+								<!-- .parent() -->
+								<!-- .html(); -->
+							<!-- } -->
+							<!-- else -->
+							<!-- { -->
+							
+							 <!-- if (data=='FAIL') -->
+								<!-- { -->
+								<!-- return $('<div>') -->
+								<!-- .addClass('fail_bg') -->
+								<!-- .text(data) -->
+								<!-- .wrap('<div></div>') -->
+								<!-- .parent() -->
+								<!-- .html(); -->
+								<!-- } -->
+								<!-- else -->
+								<!-- { -->
+								<!-- return $('<div>') -->
+								<!-- .addClass('no_run_bg') -->
+								<!-- .text(data) -->
+								<!-- .wrap('<div></div>') -->
+								<!-- .parent() -->
+								<!-- .html(); -->
+								<!-- } -->
+							<!-- } -->
+					<!-- } -->
+					<!-- else { -->
+					<!-- return data; -->
+					<!-- } -->
+				 <!-- } -->
+				<!-- }, -->
+				<!-- { title: "Screenshot",                                                                                                                                        -->
+				<!-- render : function(data, type, row, meta){ -->
+						<!-- if(type === 'display'){ -->
+							<!-- return $('<div>') -->
+							<!-- .addClass('fa fa-camera-retro screen-shot') -->
+							<!-- .text(data) -->
+							<!-- .wrap('<div></div>') -->
+							<!-- .parent() -->
+							<!-- .html(); -->
+						<!-- } -->
+						 <!-- else { -->
+							<!-- return data; -->
+						<!-- } -->
+					<!-- } -->
+				
+				
+				
+				
+				
+				
+				
+				 <!-- } -->
+			<!-- ], -->
+			<!-- fixedHeader: false, -->
+			<!-- "scrollY":"400px", -->
+			<!-- "scrollCollapse": true, -->
+			<!-- "paging":         true, -->
+			<!-- responsive: false, -->
+		<!-- }); -->
+	<!-- //}); -->
+<!-- } -->
+	
+$(function() {
+	//$( "#table2 > tbody > tr:first-child > td:first-child" ).prepend('<a href="#">');
+	//$( "#table2 > tbody > tr:first-child > td:first-child" ).append('</a>');
+	
+	$("#table2 tr td a").off('click').on('click',function(){
+		fileNamevalue=$(this).html();
+		setTimeout(function(){ tableClick(fileNamevalue); heightCal(); clickChart();  }, 10);
+	});
+	
+});
+
+
+
+</script>
+</body>
+</html>

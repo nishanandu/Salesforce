@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="Failed suite [CAT]" guice-stage="DEVELOPMENT">
+  <parameter name="NodeName" value="Log"/>
+  <parameter name="browser" value="NULL"/>
+  <parameter name="NodeURL" value="NULL"/>
+  <parameter name="RegPackName" value="NULL"/>
+  <test parallel="tests" name="Node1(failed)">
+    <parameter name="NodeName" value="Log"/>
+    <parameter name="browser" value="NULL"/>
+    <parameter name="NodeURL" value="NULL"/>
+    <parameter name="RegPackName" value="NULL"/>
+    <classes>
+      <class name="Scripts.DriverScript">
+        <methods>
+          <include name="main"/>
+          <include name="closeApplication"/>
+          <include name="remote"/>
+        </methods>
+      </class> <!-- Scripts.DriverScript -->
+    </classes>
+  </test> <!-- Node1(failed) -->
+</suite> <!-- Failed suite [CAT] -->
